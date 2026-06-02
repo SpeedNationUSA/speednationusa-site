@@ -1,286 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SpeedNationUSA | Automotive Photography</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SpeedNationUSA | Automotive Media</title>
 
-  <style>
-    /* RESET */
-    * {
-      box-sizing: border-box;
-    }
+<style>
+/* ========== BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: white;
-      padding-top: 70px; /* fixes navbar overlap */
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    /* NAVBAR */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.9);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 25px;
-      z-index: 1000;
-      border-bottom: 1px solid #222;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: white;
+  overflow-x: hidden;
+}
 
-    .nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
+/* ========== NAV ========== */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 999;
+}
 
-    .nav a:hover {
-      opacity: 1;
-    }
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+  opacity: 0.7;
+  transition: 0.3s;
+}
 
-    /* HERO */
-    .hero {
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: radial-gradient(circle at center, #1a1a1a, #000);
-      padding: 20px;
-    }
+.nav a:hover {
+  opacity: 1;
+}
 
-    .hero h1 {
-      font-size: 54px;
-      margin: 0;
-    }
+/* ========== HERO ========== */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+  padding: 20px;
+}
 
-    .hero p {
-      opacity: 0.8;
-      max-width: 600px;
-      margin-top: 10px;
-    }
+.hero h1 {
+  font-size: 58px;
+  letter-spacing: 1px;
+}
 
-    /* BUTTONS */
-    .btn-group {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 25px;
-    }
+.hero p {
+  margin-top: 10px;
+  opacity: 0.75;
+  max-width: 600px;
+}
 
-    .btn {
-      padding: 14px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* BUTTONS */
+.btn-group {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    .btn-primary {
-      background: white;
-      color: black;
-    }
+.btn {
+  padding: 14px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    .btn-outline {
-      border: 1px solid white;
-      color: white;
-    }
+.primary {
+  background: white;
+  color: black;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+.outline {
+  border: 1px solid white;
+  color: white;
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
+/* ========== SECTIONS ========== */
+section {
+  padding: 100px 20px;
+  max-width: 1100px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
 
-    /* SERVICE GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .card {
-      background: #111;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #222;
-    }
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
 
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 10px;
-    }
+/* ========== GRID ========== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
 
-    .gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+.card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-    /* MEDIA KIT */
-    .media-kit {
-      background: #111;
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #222;
-      line-height: 1.6;
-    }
+/* ========== GALLERY ========== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
 
-    /* BOOKING */
-    .booking {
-      text-align: center;
-      background: #0f0f0f;
-      padding: 80px 20px;
-    }
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.4s;
+}
 
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      padding: 60px 20px;
-    }
+.gallery img:hover {
+  transform: scale(1.03);
+}
 
-    .ig-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 20px;
-      background: #E1306C;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      margin-top: 15px;
-    }
+/* ========== MEDIA KIT ========== */
+.media {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #222;
+  line-height: 1.6;
+}
 
-    .ig-btn img {
-      width: 20px;
-      height: 20px;
-    }
+/* ========== BOOKING ========== */
+.booking {
+  text-align: center;
+  background: #0f0f0f;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 12px;
-      opacity: 0.5;
-    }
-  </style>
+/* ========== CONTACT ========== */
+.contact {
+  text-align: center;
+}
+
+.ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: #E1306C;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.4;
+  font-size: 12px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <div class="nav">
-    <div><strong>SpeedNationUSA</strong></div>
-    <div>
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#media">Media</a>
-      <a href="#book">Book</a>
-      <a href="#contact">Contact</a>
+<!-- NAV -->
+<div class="nav">
+  <div><strong>SpeedNationUSA</strong></div>
+  <div>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#media">Media</a>
+    <a href="#book">Book</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>SpeedNationUSA</h1>
+  <p>Automotive Media • Event Coverage • Brand Content Creation</p>
+
+  <div class="btn-group">
+    <a class="btn primary" href="#work">View Work</a>
+    <a class="btn outline" href="#book">Book a Shoot</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Services</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Automotive Photography</h3>
+      <p>Car shoots, rolling shots, build features.</p>
+    </div>
+
+    <div class="card">
+      <h3>Event Coverage</h3>
+      <p>Meets, shows, and automotive culture events.</p>
+    </div>
+
+    <div class="card">
+      <h3>Brand Content</h3>
+      <p>Sponsored content and commercial automotive media.</p>
     </div>
   </div>
+</section>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>SpeedNationUSA</h1>
-    <p>Automotive Photography • Event Coverage • Select Lifestyle Work</p>
+<!-- WORK -->
+<section id="work">
+  <h2>Featured Work</h2>
 
-    <div class="btn-group">
-      <a class="btn btn-primary" href="#services">Explore Services</a>
-      <a class="btn btn-outline" href="#work">View Work</a>
-    </div>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
   </div>
+</section>
 
-  <!-- SERVICE SELECTOR -->
-  <section id="services">
-    <h2>Choose Your Session</h2>
+<!-- MEDIA -->
+<section id="media">
+  <h2>Media & Brand Collaborations</h2>
 
-    <div class="btn-group">
-      <a class="btn btn-primary" href="#work">Automotive / Events</a>
-      <a class="btn btn-outline" href="https://YOUR-LIFESTYLE-LINK.pages.dev" target="_blank">
-        Lifestyle / Weddings
-      </a>
-    </div>
+  <div class="media">
+    <p>
+      SpeedNationUSA is an emerging automotive media platform focused on high-quality photography,
+      event coverage, and automotive storytelling in real enthusiast environments.
+    </p>
 
-    <div class="grid" style="margin-top:40px;">
-      <div class="card">
-        <h3>Automotive Photography</h3>
-        <p>Car shoots, rolling shots, and build features.</p>
-      </div>
+    <p>
+      Collaboration opportunities include automotive brands, local businesses, and performance-focused companies seeking authentic content creation.
+    </p>
 
-      <div class="card">
-        <h3>Event Coverage</h3>
-        <p>Meets, shows, and automotive community events.</p>
-      </div>
+    <ul>
+      <li>Automotive product features</li>
+      <li>Event coverage</li>
+      <li>Social media content creation</li>
+      <li>Brand collaborations</li>
+    </ul>
+  </div>
+</section>
 
-      <div class="card">
-        <h3>Brand Content</h3>
-        <p>Sponsorship and promotional automotive media.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section id="work">
-    <h2>Featured Work</h2>
-
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
-      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-      <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
-      <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
-      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
-    </div>
-  </section>
-
-  <!-- MEDIA KIT -->
-  <section id="media">
-    <h2>Media & Brand Collaborations</h2>
-
-    <div class="media-kit">
-      <p>
-        SpeedNationUSA is an emerging automotive media platform focused on high-quality photography,
-        event coverage, and car culture storytelling across Florida.
-      </p>
-
-      <p>
-        Collaborations include automotive brands, local businesses, and lifestyle companies seeking authentic visual content within real enthusiast environments.
-      </p>
-
-      <ul>
-        <li>Automotive product photography</li>
-        <li>Event coverage & community features</li>
-        <li>Social media content creation</li>
-        <li>Brand collaboration projects</li>
-      </ul>
-
-      <a class="btn btn-primary" href="mailto:your@email.com?subject=Media%20Collaboration">
-        Request Collaboration Info
-      </a>
-    </div>
-  </section>
-
-  <!-- BOOKING -->
-  <section id="book">
+<!-- BOOK -->
+<section id="book">
   <h2>Book a Shoot</h2>
 
   <div class="testimonial">
@@ -305,23 +306,96 @@
   </div>
 </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
+<!-- CONTACT -->
+<!-- CONTACT / BOOKING INTAKE -->
+<section id="contact" class="contact">
 
-    <p>Florida-based photographer available for nationwide automotive, lifestyle, and brand collaborations</p>
+  <h2>Booking & Inquiries</h2>
 
-    <p><strong>Email:</strong> speednationusa@gmail.com</p>
+  <p style="max-width:700px; margin:auto; opacity:0.8; line-height:1.6;">
+    Please use the form below to request a photography session or collaboration.
+    I review all inquiries personally and respond within 24–48 hours.
+  </p>
 
-    <a class="ig-btn" href="https://instagram.com/speednationusa" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-      View Instagram Portfolio
-    </a>
-  </section>
+  <br><br>
 
-  <footer>
-    © 2026 SpeedNationUSA
-  </footer>
+  <div style="max-width:700px; margin:auto; text-align:left; background:#111; padding:25px; border-radius:12px; border:1px solid #222;">
+
+    <!-- FORM -->
+    <form action="mailto:your@email.com" method="POST" enctype="text/plain">
+
+      <label>Name</label><br>
+      <input type="text" name="name" required
+        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
+
+      <label>Email</label><br>
+      <input type="email" name="email" required
+        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
+
+      <label>What are you booking?</label><br>
+      <select name="service"
+        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
+
+        <option>Automotive Photoshoot</option>
+        <option>Event Coverage</option>
+        <option>Brand / Sponsorship Collaboration</option>
+        <option>Other Inquiry</option>
+
+      </select>
+
+      <label>Location</label><br>
+      <input type="text" name="location"
+        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
+
+      <label>Preferred Date</label><br>
+      <input type="text" name="date"
+        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
+
+      <label>Project Details</label><br>
+      <textarea name="message" rows="5" required
+        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;"></textarea>
+
+      <button type="submit"
+        style="width:100%; padding:14px; background:white; color:black; font-weight:bold; border:none; border-radius:8px; cursor:pointer;">
+        Submit Inquiry
+      </button>
+
+    </form>
+
+  </div>
+
+  <br><br>
+
+  <!-- DIRECT EMAIL OPTION -->
+  <p style="opacity:0.7;">or contact directly:</p>
+
+  <a href="mailto:speednationusa@gmail.com?subject=SpeedNationUSA%20Booking%20Inquiry"
+     style="display:inline-block; padding:14px 20px; background:#E1306C; color:white; text-decoration:none; border-radius:8px; font-weight:bold;">
+    Email Directly
+  </a>
+
+</section>
+  
+<footer>
+© 2026 SpeedNationUSA
+</footer>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+</script>
 
 </body>
 </html>
