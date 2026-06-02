@@ -6,25 +6,32 @@
   <title>SpeedNationUSA | Automotive Photography</title>
 
   <style>
+    /* RESET */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #0b0b0b;
       color: white;
+      padding-top: 70px; /* fixes navbar overlap */
     }
 
-    /* NAV */
+    /* NAVBAR */
     .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 25px;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
     }
 
     .nav a {
@@ -35,92 +42,53 @@
       opacity: 0.8;
     }
 
-    .nav a:hover { opacity: 1; }
+    .nav a:hover {
+      opacity: 1;
+    }
 
     /* HERO */
-    <section style="padding:80px 20px; text-align:center; background:#0f0f0f;">
-
-  <h2>Choose Your Session Type</h2>
-
-  <p style="opacity:0.8; max-width:700px; margin:auto;">
-    Select the type of photography experience you’re looking for.
-  </p>
-
-  <div style="margin-top:30px; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
-
-    <!-- AUTOMOTIVE -->
-    <a href="#work" style="
-      padding:14px 22px;
-      background:white;
-      color:black;
-      text-decoration:none;
-      font-weight:bold;
-      border-radius:6px;
-    ">
-      Automotive / Events
-    </a>
-
-    <!-- LIFESTYLE -->
-    <a href="https://Yspeednationusa-lifestyle.pages.dev" target="_blank" style="
-      padding:14px 22px;
-      border:1px solid white;
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      border-radius:6px;
-    ">
-      Lifestyle / Weddings
-    </a>
-
-  </div>
-
-</section>
-    
     .hero {
-      height: 100vh;
+      height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
       background: radial-gradient(circle at center, #1a1a1a, #000);
+      padding: 20px;
     }
 
     .hero h1 {
-      font-size: 60px;
+      font-size: 54px;
       margin: 0;
-      letter-spacing: 2px;
     }
 
     .hero p {
       opacity: 0.8;
-      margin-top: 10px;
       max-width: 600px;
+      margin-top: 10px;
     }
 
-    .cta {
-      margin-top: 25px;
+    /* BUTTONS */
+    .btn-group {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 25px;
     }
 
     .btn {
-      padding: 14px 22px;
+      padding: 14px 20px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 6px;
-      transition: 0.2s;
     }
 
     .btn-primary {
       background: white;
       color: black;
     }
-
-    .btn-primary:hover { opacity: 0.8; }
 
     .btn-outline {
       border: 1px solid white;
@@ -136,14 +104,14 @@
 
     h2 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
-    /* SERVICES */
+    /* SERVICE GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 15px;
     }
 
     .card {
@@ -167,23 +135,26 @@
       border-radius: 8px;
     }
 
-    /* TESTIMONIAL */
-    .testimonial {
+    /* MEDIA KIT */
+    .media-kit {
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid #222;
+      line-height: 1.6;
+    }
+
+    /* BOOKING */
+    .booking {
       text-align: center;
-      opacity: 0.85;
-      max-width: 700px;
-      margin: auto;
+      background: #0f0f0f;
+      padding: 80px 20px;
     }
 
     /* CONTACT */
     .contact {
       text-align: center;
-      background: #111;
-      padding: 80px 20px;
-    }
-
-    .social {
-      margin-top: 20px;
+      padding: 60px 20px;
     }
 
     .ig-btn {
@@ -196,6 +167,7 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
+      margin-top: 15px;
     }
 
     .ig-btn img {
@@ -220,6 +192,7 @@
     <div>
       <a href="#services">Services</a>
       <a href="#work">Work</a>
+      <a href="#media">Media</a>
       <a href="#book">Book</a>
       <a href="#contact">Contact</a>
     </div>
@@ -227,45 +200,45 @@
 
   <!-- HERO -->
   <div class="hero">
-    <h1>Automotive Photography</h1>
-    <p>High-quality car photography & event coverage built for enthusiasts, brands, and sponsors.</p>
+    <h1>SpeedNationUSA</h1>
+    <p>Automotive Photography • Event Coverage • Select Lifestyle Work</p>
 
-    <div class="cta">
-      <a class="btn btn-primary" href="#book">Book a Shoot</a>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="#services">Explore Services</a>
       <a class="btn btn-outline" href="#work">View Work</a>
     </div>
   </div>
 
-  <!-- SERVICES -->
+  <!-- SERVICE SELECTOR -->
   <section id="services">
-  <h2>Photography Services</h2>
+    <h2>Choose Your Session</h2>
 
-  <div class="grid">
-
-    <div class="card">
-      <h3>Automotive Photography</h3>
-      <p>Car shoots, rolling shots, detail shots, and build features for enthusiasts and brands.</p>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="#work">Automotive / Events</a>
+      <a class="btn btn-outline" href="https://YOUR-LIFESTYLE-LINK.pages.dev" target="_blank">
+        Lifestyle / Weddings
+      </a>
     </div>
 
-    <div class="card">
-      <h3>Event Coverage</h3>
-      <p>Meets, car shows, and automotive events captured with full storytelling coverage.</p>
+    <div class="grid" style="margin-top:40px;">
+      <div class="card">
+        <h3>Automotive Photography</h3>
+        <p>Car shoots, rolling shots, and build features.</p>
+      </div>
+
+      <div class="card">
+        <h3>Event Coverage</h3>
+        <p>Meets, shows, and automotive community events.</p>
+      </div>
+
+      <div class="card">
+        <h3>Brand Content</h3>
+        <p>Sponsorship and promotional automotive media.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Portrait Photography</h3>
-      <p>Clean, styled portraits for personal branding, social media, and professional use.</p>
-    </div>
-
-    <div class="card">
-      <h3>Weddings & Couples</h3>
-      <p>Natural, cinematic-style wedding and engagement photography with a storytelling focus.</p>
-    </div>
-
-  </div>
-</section>
-
-  <!-- WORK / GALLERY -->
+  <!-- WORK -->
   <section id="work">
     <h2>Featured Work</h2>
 
@@ -279,48 +252,33 @@
     </div>
   </section>
 
-  <section id="media-kit" style="padding:80px 20px; background:#0f0f0f; text-align:center;">
+  <!-- MEDIA KIT -->
+  <section id="media">
+    <h2>Media & Brand Collaborations</h2>
 
-  <h2>Media & Brand Collaborations</h2>
+    <div class="media-kit">
+      <p>
+        SpeedNationUSA is an emerging automotive media platform focused on high-quality photography,
+        event coverage, and car culture storytelling across Florida.
+      </p>
 
-  <p style="max-width:800px; margin:auto; opacity:0.85; line-height:1.6;">
-    SpeedNationUSA is an emerging automotive media platform focused on high-quality photography, event coverage, and car culture storytelling. Content is built around real automotive communities in Florida and shared through social media channels centered on enthusiast engagement.
-  </p>
+      <p>
+        Collaborations include automotive brands, local businesses, and lifestyle companies seeking authentic visual content within real enthusiast environments.
+      </p>
 
-  <br>
+      <ul>
+        <li>Automotive product photography</li>
+        <li>Event coverage & community features</li>
+        <li>Social media content creation</li>
+        <li>Brand collaboration projects</li>
+      </ul>
 
-  <div style="max-width:800px; margin:auto; text-align:left; background:#111; padding:25px; border-radius:10px; border:1px solid #222;">
+      <a class="btn btn-primary" href="mailto:your@email.com?subject=Media%20Collaboration">
+        Request Collaboration Info
+      </a>
+    </div>
+  </section>
 
-    <h3 style="margin-top:0;">For Brands & Sponsors</h3>
-
-    <p style="opacity:0.85; line-height:1.6;">
-      I work with automotive-related brands, local businesses, and lifestyle companies looking to create authentic visual content within real enthusiast environments.
-    </p>
-
-    <p style="opacity:0.85; line-height:1.6;">
-      Collaboration opportunities include:
-    </p>
-
-    <ul style="opacity:0.85; line-height:1.8;">
-      <li>Product-focused automotive photography</li>
-      <li>Event coverage and community features</li>
-      <li>Social media content creation for brand pages</li>
-      <li>Local promotional and lifestyle shoots</li>
-    </ul>
-
-    <p style="margin-top:15px; font-weight:bold; opacity:0.9;">
-      I focus on building long-term partnerships with brands that value consistent content quality and authentic automotive culture exposure.
-    </p>
-
-    <a href="mailto:your@email.com?subject=Brand%20Collaboration%20Inquiry"
-       style="display:inline-block; margin-top:15px; padding:12px 20px; background:white; color:black; text-decoration:none; font-weight:bold; border-radius:6px;">
-      Request Collaboration Info
-    </a>
-
-  </div>
-</section>
-
-  
   <!-- BOOKING -->
   <section id="book">
   <h2>Book a Shoot</h2>
@@ -348,23 +306,21 @@
 </section>
 
   <!-- CONTACT -->
- <section id="contact" class="contact">
-  <h2>Connect</h2>
+  <section id="contact">
+    <h2>Contact</h2>
 
-  <p>Florida-based photographer available for nationwide automotive, lifestyle, and brand collaborations</p>
+    <p>Florida-based photographer available for nationwide automotive, lifestyle, and brand collaborations</p>
 
-  <p><strong>Email:</strong> speednationusa@gmail.com</p>
+    <p><strong>Email:</strong> speednationusa@gmail.com</p>
 
-  <div class="social">
     <a class="ig-btn" href="https://instagram.com/speednationusa" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
       View Instagram Portfolio
     </a>
-  </div>
-</section>
+  </section>
 
   <footer>
-    © 2026 SpeedNationUSA. Automotive Photography & Media
+    © 2026 SpeedNationUSA
   </footer>
 
 </body>
