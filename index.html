@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SpeedNationUSA</title>
+  <title>SpeedNationUSA | Automotive Photography</title>
 
   <style>
     body {
@@ -12,6 +12,28 @@
       background: #0b0b0b;
       color: white;
     }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 25px;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .nav a:hover { opacity: 1; }
 
     /* HERO */
     .hero {
@@ -26,7 +48,7 @@
     }
 
     .hero h1 {
-      font-size: 56px;
+      font-size: 60px;
       margin: 0;
       letter-spacing: 2px;
     }
@@ -34,36 +56,68 @@
     .hero p {
       opacity: 0.8;
       margin-top: 10px;
+      max-width: 600px;
+    }
+
+    .cta {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .btn {
-      margin-top: 20px;
-      padding: 12px 22px;
-      background: white;
-      color: black;
+      padding: 14px 22px;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 4px;
+      border-radius: 6px;
+      transition: 0.2s;
     }
 
-    /* SECTION */
+    .btn-primary {
+      background: white;
+      color: black;
+    }
+
+    .btn-primary:hover { opacity: 0.8; }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    /* SECTIONS */
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      padding: 80px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     h2 {
       text-align: center;
       margin-bottom: 30px;
-      letter-spacing: 1px;
+    }
+
+    /* SERVICES */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #222;
     }
 
     /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      gap: 10px;
     }
 
     .gallery img {
@@ -71,24 +125,42 @@
       height: 220px;
       object-fit: cover;
       border-radius: 8px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    .gallery img:hover {
-      transform: scale(1.03);
-      opacity: 0.9;
+    /* TESTIMONIAL */
+    .testimonial {
+      text-align: center;
+      opacity: 0.85;
+      max-width: 700px;
+      margin: auto;
     }
 
     /* CONTACT */
     .contact {
       text-align: center;
       background: #111;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
 
-    .contact p {
-      margin: 8px 0;
-      opacity: 0.8;
+    .social {
+      margin-top: 20px;
+    }
+
+    .ig-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 20px;
+      background: #E1306C;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .ig-btn img {
+      width: 20px;
+      height: 20px;
     }
 
     footer {
@@ -102,55 +174,115 @@
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>SpeedNationUSA</h1>
-    <p>Automotive Photography • Event Coverage • Car Culture Media</p>
-    <a class="btn" href="#contact">Book a Shoot</a>
+  <!-- NAV -->
+  <div class="nav">
+    <div><strong>SpeedNationUSA</strong></div>
+    <div>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#book">Book</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 
-  <!-- GALLERY -->
-  <section>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Automotive Photography</h1>
+    <p>High-quality car photography & event coverage built for enthusiasts, brands, and sponsors.</p>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="#book">Book a Shoot</a>
+      <a class="btn btn-outline" href="#work">View Work</a>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+  <h2>Photography Services</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Automotive Photography</h3>
+      <p>Car shoots, rolling shots, detail shots, and build features for enthusiasts and brands.</p>
+    </div>
+
+    <div class="card">
+      <h3>Event Coverage</h3>
+      <p>Meets, car shows, and automotive events captured with full storytelling coverage.</p>
+    </div>
+
+    <div class="card">
+      <h3>Portrait Photography</h3>
+      <p>Clean, styled portraits for personal branding, social media, and professional use.</p>
+    </div>
+
+    <div class="card">
+      <h3>Weddings & Couples</h3>
+      <p>Natural, cinematic-style wedding and engagement photography with a storytelling focus.</p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- WORK / GALLERY -->
+  <section id="work">
     <h2>Featured Work</h2>
 
     <div class="gallery">
-      <!-- Replace these with your real images -->
-      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7" />
-      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" />
-      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" />
-      <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" />
-      <img src="https://images.unsplash.com/photo-1542362567-b07e54358753" />
-      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763" />
+      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+      <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+      <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <div id="contact" class="contact">
-    <h2>Contact / Bookings</h2>
-   <div style="margin-top:15px;">
-  <a href="https://instagram.com/speednationusa" target="_blank" style="
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:14px 22px;
-    background:#111;
-    border:1px solid #E1306C;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:8px;
-  ">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-         style="width:20px;height:20px;">
-    View Instagram Portfolio
-  </a>
-</div>
-    <p>Email: speednationusa@gmail.com</p>
-    <p>Based in Florida • Available for shoots & events</p>
+  <!-- BOOKING -->
+  <section id="book">
+  <h2>Book a Shoot</h2>
+
+  <div class="testimonial">
+    <p>
+      All bookings require a <strong>50% non-refundable deposit</strong> to secure your date and time.
+    </p>
+
+    <p>
+      This ensures commitment from both sides and guarantees your session slot.
+    </p>
+
+    <br>
+
+    <p><strong>How it works:</strong></p>
+    <p>1. Submit inquiry → 2. Confirm details → 3. Pay deposit → 4. Shoot day → 5. Final delivery</p>
+
+    <br>
+
+    <a class="btn btn-primary" href="mailto:your@email.com?subject=Photography%20Booking%20Inquiry">
+      Request Booking
+    </a>
   </div>
+</section>
+
+  <!-- CONTACT -->
+ <section id="contact" class="contact">
+  <h2>Connect</h2>
+
+  <p>Florida-based photographer available for nationwide automotive, lifestyle, and brand collaborations</p>
+
+  <p><strong>Email:</strong> speednationusa@gmail.com</p>
+
+  <div class="social">
+    <a class="ig-btn" href="https://instagram.com/speednationusa" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+      View Instagram Portfolio
+    </a>
+  </div>
+</section>
 
   <footer>
-    © 2026 SpeedNationUSA. All rights reserved.
+    © 2026 SpeedNationUSA. Automotive Photography & Media
   </footer>
 
 </body>
