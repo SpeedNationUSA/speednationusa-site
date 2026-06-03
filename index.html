@@ -88,7 +88,6 @@ body {
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
 }
 
 .primary {
@@ -155,7 +154,7 @@ h2 {
   transform: scale(1.03);
 }
 
-/* ========== MEDIA KIT ========== */
+/* ========== MEDIA ========== */
 .media {
   background: #111;
   padding: 30px;
@@ -164,10 +163,40 @@ h2 {
   line-height: 1.6;
 }
 
-/* ========== BOOKING ========== */
-.booking {
+/* ========== DEPOSIT BADGE ========== */
+.deposit-badge {
+  margin: 0 auto 20px;
+  max-width: 700px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
   text-align: center;
-  background: #0f0f0f;
+  font-size: 14px;
+  opacity: 0.95;
+  animation: floatGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0px); box-shadow: 0 0 0 rgba(255,255,255,0); }
+  50% { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,255,255,0.06); }
+  100% { transform: translateY(0px); box-shadow: 0 0 0 rgba(255,255,255,0); }
+}
+
+/* ========== BOOKING TRUST BAR (STICKY STYLE INSIDE SECTION) ========== */
+.booking-trust {
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  margin: 20px auto;
+  max-width: 700px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.9;
 }
 
 /* ========== CONTACT ========== */
@@ -205,7 +234,7 @@ footer {
     <a href="#services">Services</a>
     <a href="#work">Work</a>
     <a href="#media">Media</a>
-    <a href="#book">Book</a>
+    <a href="#howitworks">Process</a>
     <a href="#contact">Contact</a>
   </div>
 </div>
@@ -217,7 +246,7 @@ footer {
 
   <div class="btn-group">
     <a class="btn primary" href="#work">View Work</a>
-    <a class="btn outline" href="#book">Book a Shoot</a>
+    <a class="btn outline" href="#contact">Book a Shoot</a>
   </div>
 </div>
 
@@ -264,82 +293,85 @@ footer {
   <div class="media">
     <p>
       SpeedNationUSA is an emerging automotive media platform focused on high-quality photography,
-      event coverage, and automotive storytelling in real enthusiast environments.
+      event coverage, and automotive storytelling.
     </p>
 
     <p>
-      Collaboration opportunities include automotive brands, local businesses, and performance-focused companies seeking authentic content creation.
+      Collaboration opportunities include automotive brands, local businesses, and performance companies.
     </p>
-
-    <ul>
-      <li>Automotive product features</li>
-      <li>Event coverage</li>
-      <li>Social media content creation</li>
-      <li>Brand collaborations</li>
-    </ul>
   </div>
 </section>
 
-<!-- BOOK -->
-    <p><strong>How it works:</strong></p>
-    <p>1. Submit inquiry → 2. Confirm details → 3. Pay deposit → 4. Shoot day → 5. Final delivery</p>
+<!-- HOW IT WORKS -->
+<section id="howitworks">
+  <h2>How It Works</h2>
 
-    <br>
+  <div class="deposit-badge">
+    <strong>Deposit Policy:</strong> All bookings require a 50% non-refundable deposit to confirm your session.
+  </div>
 
+  <div class="grid">
+    <div class="card">
+      <h3>1. Submit Inquiry</h3>
+      <p>Fill out the booking form with your shoot details.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. Review & Response</h3>
+      <p>24–48 hour response time for availability.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Confirm Booking</h3>
+      <p>Deposit required to secure your session.</p>
+    </div>
+
+    <div class="card">
+      <h3>4. Shoot Day</h3>
+      <p>We execute your session on location.</p>
+    </div>
+
+    <div class="card">
+      <h3>5. Delivery</h3>
+      <p>Edited content delivered digitally.</p>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<!-- CONTACT / BOOKING INTAKE -->
 <section id="contact" class="contact">
 
   <h2>Booking & Inquiries</h2>
 
-  <p style="max-width:700px; margin:auto; opacity:0.8; line-height:1.6;">
-    Please use the form below to request a photography session or collaboration.
-    I review all inquiries personally and respond within 24–48 hours.
+  <div class="booking-trust">
+    🚗 Fast response • 📍 Florida based • 💳 50% deposit required
+  </div>
+
+  <p style="max-width:700px; margin:auto; opacity:0.8;">
+    Submit your inquiry below for automotive shoots or collaborations.
   </p>
 
-  <br><br>
+  <div style="max-width:700px; margin:auto; text-align:left; background:#111; padding:25px; border-radius:12px; border:1px solid #222; margin-top:20px;">
 
-  <div style="max-width:700px; margin:auto; text-align:left; background:#111; padding:25px; border-radius:12px; border:1px solid #222;">
-
-    <!-- FORM -->
-    <form action="mailto:your@email.com" method="POST" enctype="text/plain">
+    <form action="mailto:speednationusa@gmail.com" method="POST" enctype="text/plain">
 
       <label>Name</label><br>
-      <input type="text" name="name" required
-        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
+      <input type="text" name="name" required style="width:100%; padding:12px; margin:10px 0; background:#0b0b0b; color:white; border:1px solid #333; border-radius:6px;">
 
       <label>Email</label><br>
-      <input type="email" name="email" required
-        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
+      <input type="email" name="email" required style="width:100%; padding:12px; margin:10px 0; background:#0b0b0b; color:white; border:1px solid #333; border-radius:6px;">
 
-      <label>What are you booking?</label><br>
-      <select name="service"
-        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
-
-        <option>Automotive Photoshoot</option>
+      <label>Service</label><br>
+      <select name="service" style="width:100%; padding:12px; margin:10px 0; background:#0b0b0b; color:white; border:1px solid #333; border-radius:6px;">
+        <option>Automotive Shoot</option>
         <option>Event Coverage</option>
-        <option>Brand / Sponsorship Collaboration</option>
-        <option>Other Inquiry</option>
-
+        <option>Brand Collaboration</option>
       </select>
 
-      <label>Location</label><br>
-      <input type="text" name="location"
-        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
+      <label>Details</label><br>
+      <textarea name="message" rows="5" style="width:100%; padding:12px; margin:10px 0; background:#0b0b0b; color:white; border:1px solid #333; border-radius:6px;"></textarea>
 
-      <label>Preferred Date</label><br>
-      <input type="text" name="date"
-        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;">
-
-      <label>Project Details</label><br>
-      <textarea name="message" rows="5" required
-        style="width:100%; padding:12px; margin:8px 0 15px; background:#0b0b0b; border:1px solid #333; color:white; border-radius:6px;"></textarea>
-
-      <button type="submit"
-        style="width:100%; padding:14px; background:white; color:black; font-weight:bold; border:none; border-radius:8px; cursor:pointer;">
+      <button type="submit" style="width:100%; padding:14px; background:white; color:black; border:none; border-radius:8px; font-weight:bold;">
         Submit Inquiry
       </button>
 
@@ -347,23 +379,17 @@ footer {
 
   </div>
 
-  <br><br>
-
-  <!-- DIRECT EMAIL OPTION -->
-  <p style="opacity:0.7;">or contact directly:</p>
-
-  <a href="mailto:speednationusa@gmail.com?subject=SpeedNationUSA%20Booking%20Inquiry"
-     style="display:inline-block; padding:14px 20px; background:#E1306C; color:white; text-decoration:none; border-radius:8px; font-weight:bold;">
-    Email Directly
+  <a class="ig" href="https://instagram.com/speednationusa">
+    Instagram Portfolio
   </a>
 
 </section>
-  
+
 <footer>
 © 2026 SpeedNationUSA
 </footer>
 
-<!-- ANIMATION SCRIPT -->
+<!-- ANIMATION -->
 <script>
 const sections = document.querySelectorAll("section");
 
@@ -375,9 +401,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.15 });
 
-sections.forEach(section => {
-  observer.observe(section);
-});
+sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
